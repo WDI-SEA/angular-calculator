@@ -45,6 +45,17 @@ angular.module('App', [])
       $scope.calcString = $scope.toNumber($scope.firstArg) - $scope.toNumber($scope.secondArg);
     }
 
+    $scope.resetAfterCalc();
+  };
+
+  $scope.resetAfterCalc = function(){
+    console.log("clear");
+    $scope.test = "hello world";
+    $scope.firstArg = $scope.calcString;
+    $scope.secondArg = '';
+    $scope.onFirstArg = true;
+    $scope.onSecondArg = false;
+    $scope.operator = '';
   };
 
   $scope.clear = function(){
@@ -54,6 +65,7 @@ angular.module('App', [])
     $scope.secondArg = '';
     $scope.onFirstArg = true;
     $scope.onSecondArg = false;
+    $scope.operator = '';
     $scope.calcString = 0;
   };
 
