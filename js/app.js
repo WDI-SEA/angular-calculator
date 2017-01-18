@@ -2,7 +2,6 @@ angular.module('App', [])
 .controller('appController', ['$scope', function($scope){
 
   // DECLARE VARIABLES
-  $scope.test = "hello world";
   $scope.firstArg = '';
   $scope.secondArg = '';
   $scope.onFirstArg = true;
@@ -12,27 +11,42 @@ angular.module('App', [])
 
   //DECLARE FUNCTIONS
   $scope.numberClick = function(num){
-    console.log(num + " clicked");
     if($scope.onFirstArg){
-      console.log("on first arg");
-      $scope.firstArg = $scope.firstArg + num;
-      $scope.calcString = $scope.firstArg;
+      if(isNaN($scope.firstArg)){
+        $scope.firstArg = $scope.firstArg + num;
+        $scope.calcString = $scope.firstArg;
+      } else{
+        $scope.firstArg = "" + num;
+        $scope.calcString = $scope.firstArg;
+      }
+
     } else if($scope.onSecondArg){
-      console.log("on second arg");
       $scope.secondArg = $scope.secondArg + num;
       $scope.calcString = $scope.secondArg;
     }
   };
 
   $scope.operatorClicked = function(operator){
-    console.log(operator);
-    $scope.onFirstArg = false;
-    $scope.onSecondArg = true;
-    $scope.operator = operator;
+    if($scope.operator===''){
+      $scope.onFirstArg = false;
+      $scope.onSecondArg = true;
+      $scope.operator = operator;
+    } else{
+      if(!$scope.secondArg){
+        $scope.onFirstArg = false;
+        $scope.onSecondArg = true;
+        $scope.operator = operator;
+      } else{
+        $scope.calculate();
+        $scope.onFirstArg = false;
+        $scope.onSecondArg = true;
+        $scope.operator = operator;
+      }
+    }
+
   };
 
   $scope.calculate = function(){
-    console.log("calculate");
     if($scope.operator === ''){
       //do nothing
     } else if($scope.operator == '/'){
@@ -49,8 +63,6 @@ angular.module('App', [])
   };
 
   $scope.resetAfterCalc = function(){
-    console.log("clear");
-    $scope.test = "hello world";
     $scope.firstArg = $scope.calcString;
     $scope.secondArg = '';
     $scope.onFirstArg = true;
@@ -59,8 +71,6 @@ angular.module('App', [])
   };
 
   $scope.clear = function(){
-    console.log("clear");
-    $scope.test = "hello world";
     $scope.firstArg = '';
     $scope.secondArg = '';
     $scope.onFirstArg = true;

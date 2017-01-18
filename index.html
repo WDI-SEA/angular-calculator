@@ -10,15 +10,6 @@
   </head>
   <body ng-app="App">
     <div class="container" ng-controller="appController">
-
-      <p>test: {{test}}</p>
-      <p>firstArg: {{firstArg}}</p>
-      <p>onFirstArg: {{onFirstArg}}</p>
-      <p>secondArg: {{secondArg}}</p>
-      <p>onSecondArg: {{onSecondArg}}</p>
-      <p>operator: {{operator}}</p>
-      <p>calcString: {{calcString}}</p>
-
       <h2 class="text-center">Simple Calc&trade;</h2>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4 my-calc">
@@ -29,15 +20,15 @@
             <button class="btn btn-default" ng-click="numberClick(7)">7</button>
             <button class="btn btn-default" ng-click="numberClick(8)">8</button>
             <button class="btn btn-default" ng-click="numberClick(9)">9</button>
-            <button class="btn btn-primary" ng-click="operatorClicked('/')">&divide;</button>
-            <button class="btn btn-primary" ng-click="operatorClicked('*')">&times;</button>
+            <button class="btn btn-primary" ng-click="operatorClicked('/')" ng-class="{'selected': operator=='/' }">&divide;</button>
+            <button class="btn btn-primary" ng-click="operatorClicked('*')" ng-class="{'selected': operator=='*' }">&times;</button>
           </div>
           <div class="row text-center">
             <button class="btn btn-default" ng-click="numberClick(4)">4</button>
             <button class="btn btn-default" ng-click="numberClick(5)">5</button>
             <button class="btn btn-default" ng-click="numberClick(6)">6</button>
-            <button class="btn btn-primary" ng-click="operatorClicked('+')">&plus;</button>
-            <button class="btn btn-primary" ng-click="operatorClicked('-')">&minus;</button>
+            <button class="btn btn-primary" ng-click="operatorClicked('+')" ng-class="{'selected': operator=='+' }">&plus;</button>
+            <button class="btn btn-primary" ng-click="operatorClicked('-')" ng-class="{'selected': operator=='-' }">&minus;</button>
           </div>
           <div class="row text-center">
             <button class="btn btn-default" ng-click="numberClick(1)">1</button>
