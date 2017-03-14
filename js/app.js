@@ -33,8 +33,6 @@ angularCalc.controller('controller', ['$scope', function($scope) {
         if ($scope.pendingValue) {
             if ($scope.runningTotal && $scope.pendingOperation == ADD) {
                 $scope.runningTotal += $scope.pendingValue;
-            } else if ($scope.runningTotal && $scope.pendingOperation == SUBTRACT) {
-                $scope.runningTotal -= $scope.pendingValue;
             } else {
                 $scope.runningTotal = $scope.pendingValue;
             }
@@ -50,8 +48,6 @@ angularCalc.controller('controller', ['$scope', function($scope) {
         if ($scope.pendingValue) {
             if ($scope.runningTotal && ($scope.pendingOperation == SUBTRACT)) {
                 $scope.runningTotal -= $scope.pendingValue;
-            } else if ($scope.runningTotal && $scope.pendingOperation == ADD) {
-                $scope.runningTotal += $scope.pendingValue;
             } else {
                 $scope.runningTotal = $scope.pendingValue;
             }
@@ -62,6 +58,37 @@ angularCalc.controller('controller', ['$scope', function($scope) {
         $scope.newNumber = true;
         $scope.pendingValue = null;
     };
+
+    $scope.multiply = function () {
+        if ($scope.pendingValue) {
+            if ($scope.runningTotal && ($scope.pendingOperation == MULTIPLY)) {
+                $scope.runningTotal *= $scope.pendingValue;
+            } else {
+                $scope.runningTotal = $scope.pendingValue;
+            }
+        }
+        setOperationToken(MULTIPLY);
+        setOutput(String($scope.runningTotal));
+        $scope.pendingOperation = MULTIPLY;
+        $scope.newNumber = true;
+        $scope.pendingValue = null;
+    };
+
+    $scope.divide = function () {
+        if ($scope.pendingValue) {
+            if ($scope.runningTotal && ($scope.pendingOperation == DIVIDE)) {
+                $scope.runningTotal /= $scope.pendingValue;
+            } else {
+                $scope.runningTotal = $scope.pendingValue;
+            }
+        }
+        setOperationToken(DIVIDE);
+        setOutput(String($scope.runningTotal));
+        $scope.pendingOperation = DIVIDE;
+        $scope.newNumber = true;
+        $scope.pendingValue = null;
+    };
+
 
       $scope.calculate = function () {
         if (!$scope.newNumber) {

@@ -16,41 +16,47 @@
 
           <div class="row">
             <input type="text" class="form-control display center-block text-right" readonly ng-model='value'>
+            
           </div>
 
           <div class="row text-center">
-            <button class="btn btn-default" ng-click="numberButtonClicked(7)">7</button>
-            <button class="btn btn-default">8</button>
-            <button class="btn btn-default">9</button>
-            <button class="btn btn-primary" ng-click=>&divide;</button>
-            <button class="btn btn-primary" ng-click=>&times;</button>
+            <button class="btn btn-default" ng-click="updateOutput(7)">7</button>
+            <button class="btn btn-default" ng-click="updateOutput(8)">8</button>
+            <button class="btn btn-default" ng-click="updateOutput(9)">9</button>
+            <button class="btn btn-primary" ng-click='divide()'>&divide;</button>
+            <button class="btn btn-primary" ng-click='multiply()'>&times;</button>
           </div>
 
           <div class="row text-center">
-            <button class="btn btn-default">4</button>
-            <button class="btn btn-default">5</button>
-            <button class="btn btn-default">6</button>
-            <button class="btn btn-primary" ng-click=>&plus;</button>
-            <button class="btn btn-primary" ng-click=>&minus;</button>
+            <button class="btn btn-default" ng-click="updateOutput(4)">4</button>
+            <button class="btn btn-default" ng-click="updateOutput(5)">5</button>
+            <button class="btn btn-default" ng-click="updateOutput(6)">6</button>
+            <button class="btn btn-primary" ng-click='add()'>&plus;</button>
+            <button class="btn btn-primary" ng-click='subtract()'>&minus;</button>
           </div>
 
           <div class="row text-center">
-            <button class="btn btn-default">1</button>
-            <button class="btn btn-default">2</button>
-            <button class="btn btn-default">3</button>
-            <button class="btn btn-success">&equals;</button>
-            <button class="btn btn-danger">c</button>
+            <button class="btn btn-default" ng-click="updateOutput(1)">1</button>
+            <button class="btn btn-default" ng-click="updateOutput(2)">2</button>
+            <button class="btn btn-default" ng-click="updateOutput(3)">3</button>
+            <button class="btn btn-success" ng-click='equal'()>&equals;</button>
+            <button class="btn btn-danger" ng-click='clear()'>c</button>
           </div>
 
           <div class="row text-center">
             <button class="btn btn-default"></button>
-            <button class="btn btn-default">0</button>
+            <button class="btn btn-default" ng-click="updateOutput(0)">0</button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
           </div>
 
         </div>
+        <p>pendingOperation: {{pendingOperation}}
+        <br>lastOperation: {{lastOperation}}
+        <br>runningTotal: {{runningTotal}}
+        <br>pendingValue: {{pendingValue}}
+        <br>newNumber: {{newNumber}}</p>
       </div>
     </div>
   </body>
