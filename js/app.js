@@ -11,7 +11,7 @@ calculator.controller("HomeCtrl", ["$scope", function($scope){
     $scope.val = 0;
     $scope.buttonPress = function(num) {
         if($scope.val == 0){
-            $scope.val = num;
+            $scope.val = num + 0;
         }else if(times == true){
             $scope.val = num;
         }else if(plus == true){
