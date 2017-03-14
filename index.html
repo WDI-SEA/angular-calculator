@@ -14,28 +14,28 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4 my-calc">
           <div class="row">
-            <input type="text" class="form-control display center-block text-right" value="{{ value }}" readonly>
+            <input type="text" class="form-control display center-block text-right" value="{{ display }}" readonly>
           </div>
           <div class="row text-center">
             <button ng-click="buttonPush($event)" class="btn btn-default">7</button>
             <button ng-click="buttonPush($event)"class="btn btn-default">8</button>
             <button ng-click="buttonPush($event)" class="btn btn-default">9</button>
-            <button ng-click="operatorPush($event)" class="btn btn-primary">&divide;</button>
-            <button ng-click="operatorPush($event)" class="btn btn-primary">&times;</button>
+            <button ng-class="{'highlight': operator == '/'}" ng-click="operatorPush($event);" class="btn btn-primary">&divide;</button>
+            <button ng-class="{'highlight': operator == '*'}" ng-click="operatorPush($event)" class="btn btn-primary">&times;</button>
           </div>
           <div class="row text-center">
             <button ng-click="buttonPush($event)" class="btn btn-default">4</button>
             <button ng-click="buttonPush($event)" class="btn btn-default">5</button>
             <button ng-click="buttonPush($event)" class="btn btn-default">6</button>
-            <button ng-click="operatorPush($event)" class="btn btn-primary">&plus;</button>
-            <button ng-click="operatorPush($event)" class="btn btn-primary">&minus;</button>
+            <button ng-class="{'highlight': operator == '+'}" ng-click="operatorPush($event)" class="btn btn-primary">&plus;</button>
+            <button ng-class="{'highlight': operator == '-'}" ng-click="operatorPush($event)" class="btn btn-primary">&minus;</button>
           </div>
           <div class="row text-center">
             <button ng-click="buttonPush($event)" class="btn btn-default">1</button>
             <button ng-click="buttonPush($event)" class="btn btn-default">2</button>
             <button ng-click="buttonPush($event)" class="btn btn-default">3</button>
-            <button ng-click="getFinalAnswer()" class="btn btn-success">&equals;</button>
-            <button ng-click="clear()" class="btn btn-danger">c</button>
+            <button ng-click="getTotal()" class="btn btn-success">&equals;</button>
+            <button ng-click="initialize()" class="btn btn-danger">c</button>
           </div>
           <div class="row text-center">
             <button class="btn btn-default"></button>
@@ -45,7 +45,6 @@
             <button class="btn btn-default"></button>
           </div>
         </div>
-        <h2>{{numbers}} = </h2>
       </div>
     </div>
   </body>
