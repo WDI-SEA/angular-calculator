@@ -16,29 +16,29 @@
             <input type="text" class="form-control display center-block text-right" ng-model="value" readonly>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default" ng-click="toggleValue(7)")>7</button>
-            <button class="btn btn-default" ng-click="toggleValue(8)">8</button>
-            <button class="btn btn-default" ng-click="toggleValue(9)">9</button>
-            <button class="btn btn-primary" ng-click="">&divide;</button>
-            <button class="btn btn-primary" ng-click="">&times;</button>
+            <button class="btn btn-default" ng-click="toggleValue(7)" ng-model="")>7</button>
+            <button class="btn btn-default" ng-click="toggleValue(8)" ng-model="">8</button>
+            <button class="btn btn-default" ng-click="toggleValue(9)" ng-model="">9</button>
+            <button class="btn btn-primary" ng-click="operator('/')">&divide;</button>
+            <button class="btn btn-primary" ng-click="operator('*')">&times;</button>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default" ng-click="toggleValue(4)">4</button>
-            <button class="btn btn-default" ng-click="toggleValue(5)">5</button>
-            <button class="btn btn-default" ng-click="toggleValue(6)">6</button>
-            <button class="btn btn-primary" ng-click="">&plus;</button>
-            <button class="btn btn-primary" ng-click="">&minus;</button>
+            <button class="btn btn-default" ng-click="toggleValue(4)" ng-model="">4</button>
+            <button class="btn btn-default" ng-click="toggleValue(5)" ng-model="">5</button>
+            <button class="btn btn-default" ng-click="toggleValue(6)" ng-model="">6</button>
+            <button class="btn btn-primary" ng-click="operator('+')">&plus;</button>
+            <button class="btn btn-primary" ng-click="operator('-')">&minus;</button>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default" ng-click="toggleValue(1)">1</button>
-            <button class="btn btn-default" ng-click="toggleValue(2)">2</button>
-            <button class="btn btn-default" ng-click="toggleValue(3)">3</button>
-            <button class="btn btn-success">&equals;</button>
-            <button class="btn btn-danger" ng-click="">c</button>
+            <button class="btn btn-default" ng-click="toggleValue(1)" ng-model="">1</button>
+            <button class="btn btn-default" ng-click="toggleValue(2)" ng-model="">2</button>
+            <button class="btn btn-default" ng-click="toggleValue(3)" ng-model="">3</button>
+            <button class="btn btn-success" <!-- ng-click="equals()" -->&equals;</button>
+            <button class="btn btn-danger" ng-click="clear()">c</button>
           </div>
           <div class="row text-center">
             <button class="btn btn-default"></button>
-            <button class="btn btn-default"ng-click="">0</button>
+            <button class="btn btn-default" ng-click="toggleValue(0)">0</button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
