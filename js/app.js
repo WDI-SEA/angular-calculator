@@ -39,7 +39,7 @@ CalcApp.controller('calc', ['$scope', function($scope) {
 			$scope.equalClicked = false;
 		}
 	};
-	
+
 	$scope.equalFunct = function() {
 		if ($scope.num1 && $scope.operator && $scope.display) {
 			$scope.equalClicked = true;
@@ -66,22 +66,17 @@ CalcApp.controller('calc', ['$scope', function($scope) {
 		clearChecks();
 	};
 
-	$scope.addDecimal = function() {
-		if ($scope.display.includes('.')) {
-			return;
-		} else {
-			$scope.display += '.';
-		}
-	}
 	function clearInputs() {
 		$scope.num1 = undefined;
 		$scope.num2 = undefined;
 		$scope.operator = undefined;
 	};
+
 	function clearChecks() {
 		$scope.equalClicked = false;
 		$scope.display = 0;
 	};
+
 }])
 		
 
