@@ -16,5 +16,16 @@
     "eslint-plugin-import": "^1.6.1",
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.0.1"
-  }
+  },
+  "description": "Your goal is to create a calculator using Angular. Starter code has been provided for you.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jblneely/angular-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jblneely/angular-calculator/issues"
+  },
+  "homepage": "https://github.com/jblneely/angular-calculator#readme"
 }
