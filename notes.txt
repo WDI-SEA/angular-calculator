@@ -1,0 +1,15 @@
+Steps:
+1. Create App
+1. Create Controller
+2. Initialize (start with zero)
+3. numPress function
+-append number
+-overwrite display
+4. operatorPress function
+5. Clear function
+6. $scope.display variable
+
+
+To see what there is needed to be installed you can check the package.json
+
+Switch statements are basically if statements. not really any different.
