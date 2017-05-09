@@ -19,29 +19,29 @@
                     <input type="text" class="form-control display center-block text-right" value="{{display}}" readonly>
                 </div>
                 <div class="row text-center">
-                    <button ng-click="numClick($event)" class="btn btn-default">7</button>
-                    <button ng-click="numClick($event)" class="btn btn-default">8</button>
-                    <button ng-click="numClick($event)" class="btn btn-default">9</button>
-                    <button ng-click="operatorClick($event" class="btn btn-primary">&divide;</button>
-                    <button ng-click="operatorClick($event)" class="btn btn-primary">&times;</button>
+                    <button ng-click="numClick(7)" class="btn btn-default">7</button>
+                    <button ng-click="numClick(8)" class="btn btn-default">8</button>
+                    <button ng-click="numClick(9)" class="btn btn-default">9</button>
+                    <button ng-click="operatorClick('/')" class="btn btn-primary">&divide;</button>
+                    <button ng-click="operatorClick('*')" class="btn btn-primary">&times;</button>
                 </div>
                 <div class="row text-center">
-                    <button ng-click="numClick($event)" class="btn btn-default">4</button>
-                    <button ng-click="numClick($event)" class="btn btn-default">5</button>
-                    <button ng-click="numClick($event)" class="btn btn-default">6</button>
-                    <button cng-click="operatorClick($event)" lass="btn btn-primary">&plus;</button>
-                    <button ng-click="operatorClick($event)" class="btn btn-primary">&minus;</button>
+                    <button ng-click="numClick(4)" class="btn btn-default">4</button>
+                    <button ng-click="numClick(5)" class="btn btn-default">5</button>
+                    <button ng-click="numClick(6)" class="btn btn-default">6</button>
+                    <button cng-click="operatorClick('+')" lass="btn btn-primary">&plus;</button>
+                    <button ng-click="operatorClick('-')" class="btn btn-primary">&minus;</button>
                 </div>
                 <div class="row text-center">
-                    <button ng-click="numClick($event)" class="btn btn-default">1</button>
-                    <button ng-click="numClick($event)" class="btn btn-default">2</button>
-                    <button ng-click="numClick($event)" class="btn btn-default">3</button>
-                    <button ng-click="operatorClick($event)" class="btn btn-success">&equals;</button>
+                    <button ng-click="numClick(1)" class="btn btn-default">1</button>
+                    <button ng-click="numClick(2)" class="btn btn-default">2</button>
+                    <button ng-click="numClick(3)" class="btn btn-default">3</button>
+                    <button ng-click="operatorClick('=')" class="btn btn-success">&equals;</button>
                     <button ng-click="initialize()" class="btn btn-danger">c</button>
                 </div>
                 <div class="row text-center">
                     <button class="btn btn-default"></button>
-                    <button ng-click="numClick($event)" class="btn btn-default">0</button>
+                    <button ng-click="numClick(0)" class="btn btn-default">0</button>
                     <button class="btn btn-default"></button>
                     <button class="btn btn-default"></button>
                     <button class="btn btn-default"></button>
