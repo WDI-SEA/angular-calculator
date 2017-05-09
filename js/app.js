@@ -30,8 +30,13 @@ calcApp.controller('Calculator', ['$scope', function($scope) {
     };
 
     $scope.pressEqual = function() {
+        if ($scope.bankA === undefined) {
+            $scope.bankA = parseInt($scope.screen);
+            $scope.screen = '';
+        }
         equalFunct();
-        clearInputs();
+        $scope.screen = $scope.bankA.toString();
+        $scope.cleared = true;
     };
 
     $scope.clear = function() {
