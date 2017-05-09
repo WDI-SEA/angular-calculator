@@ -55,7 +55,7 @@ calculator.controller('Calculator', ['$scope', function($scope) {
                 $scope.bank /= parseInt($scope.screen);
                 break;
             case '^':
-                $scope.bank = Math.pow(parseInt($scope.screen), $scope.bank);
+                $scope.bank = Math.pow($scope.bank, parseInt($scope.screen));
         }
         $scope.screen = $scope.bank.toString();
     };
