@@ -1,5 +1,5 @@
 angular.module('app', [])
-    .controller("MyController", ['$scope', function($scope) {
+    .controller("CalcController", ['$scope', function($scope) {
         // Clearing the working variables after defining the functions...
 
         $scope.numClick = function(digit) {
@@ -23,16 +23,24 @@ angular.module('app', [])
 
         $scope.evaluate = function() {
             $scope.num2 = parseFloat($scope.display, 10);
-            if ($scope.operator == '+') {
-                $scope.display = $scope.num1 + $scope.num2;
-            } else if ($scope.operator == '-') {
-                $scope.display = $scope.num1 - $scope.num2;
-            } else if ($scope.operator == '*') {
-                $scope.display = $scope.num1 * $scope.num2;
-            } else if ($scope.operator == '/') {
-                $scope.display = $scope.num1 / $scope.num2;
+
+            switch ($scope.operator) {
+                case '+':
+                    $scope.display = $scope.num1 + $scope.num2;
+                    break;
+                case '-':
+                    $scope.display = $scope.num1 - $scope.num2;
+                    break;
+                case '*':
+                    $scope.display = $scope.num1 * $scope.num2;
+                    break;
+                case '/':
+                    $scope.display = $scope.num1 / $scope.num2;
+                    break;
+                default:
+                    console.log('default should not be reached normally');
             }
-            // After performing the pending operation, clear it from the system
+
             $scope.operator = '';
             $scope.clearDisplay = true;
         };
