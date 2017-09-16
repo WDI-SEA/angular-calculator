@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="angularCalc">
   <head>
     <title>Simple Calc&trade;</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -9,37 +9,37 @@
     <script src="js/app.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container" ng-controller="calcCtrl">
       <h2 class="text-center">Simple Calc&trade;</h2>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4 my-calc">
           <div class="row">
-            <input type="text" class="form-control display center-block text-right" readonly>
+            <input type="text" class="form-control display center-block text-right" readonly ng-model="value">
           </div>
           <div class="row text-center">
-            <button class="btn btn-default">7</button>
-            <button class="btn btn-default">8</button>
-            <button class="btn btn-default">9</button>
-            <button class="btn btn-primary">&divide;</button>
-            <button class="btn btn-primary">&times;</button>
+            <button class="btn btn-default" ng-click="btnPressed(7)">7</button>
+            <button class="btn btn-default" ng-click="btnPressed(8)">8</button>
+            <button class="btn btn-default" ng-click="btnPressed(9)">9</button>
+            <button class="btn btn-primary" ng-click="btnPressed('/')">&divide;</button>
+            <button class="btn btn-primary" ng-click="btnPressed('*')">&times;</button>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default">4</button>
-            <button class="btn btn-default">5</button>
-            <button class="btn btn-default">6</button>
-            <button class="btn btn-primary">&plus;</button>
-            <button class="btn btn-primary">&minus;</button>
+            <button class="btn btn-default" ng-click="btnPressed(4)">4</button>
+            <button class="btn btn-default" ng-click="btnPressed(5)">5</button>
+            <button class="btn btn-default" ng-click="btnPressed(6)">6</button>
+            <button class="btn btn-primary" ng-click="btnPressed('+')">&plus;</button>
+            <button class="btn btn-primary" ng-click="btnPressed('-')">&minus;</button>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default">1</button>
-            <button class="btn btn-default">2</button>
-            <button class="btn btn-default">3</button>
-            <button class="btn btn-success">&equals;</button>
-            <button class="btn btn-danger">c</button>
+            <button class="btn btn-default" ng-click="btnPressed(1)">1</button>
+            <button class="btn btn-default" ng-click="btnPressed(2)">2</button>
+            <button class="btn btn-default" ng-click="btnPressed(3)">3</button>
+            <button class="btn btn-success" ng-click="getTotal()">&equals;</button>
+            <button class="btn btn-danger" ng-click="clearBtn()">c</button>
           </div>
           <div class="row text-center">
             <button class="btn btn-default"></button>
-            <button class="btn btn-default">0</button>
+            <button class="btn btn-default" ng-click="btnPressed(0)">0</button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
